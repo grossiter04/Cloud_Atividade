@@ -1,0 +1,19 @@
+# Versão da sintaxe do Docker Compose
+version: '3.8'
+
+# Define os serviços (contêineres) da nossa aplicação
+services:
+  # Nome do nosso serviço (pode ser qualquer nome, 'web' é comum)
+  web:
+    # Dá um nome fixo e amigável ao nosso contêiner
+    container_name: meu-app-web-container
+    
+    # Instrução para construir a imagem.
+    # O '.' indica para o Docker Compose usar o Dockerfile
+    # que está na pasta atual.
+    build: .
+    
+    # Mapeamento de portas (HOST:CONTÊINER)
+    # Mapeia a porta 8080 do seu computador para a porta 80 do contêiner.
+    ports:
+      - "8080:80"
